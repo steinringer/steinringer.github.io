@@ -1,0 +1,30 @@
+@import "_reset.scss";
+@import "_variables.scss";
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: $white;
+}
+
+div {
+  background-color: $stBlue;
+  position: absolute;
+  left: calc(50% - 15vh);
+  width: 30vh;
+  height: 30vh;
+  // box-shadow: 1vh 1vh $c1, 1vh -1vh $c2, -1vh 1vh $c3;
+
+
+  &.top {
+    top: 10vh;
+  }
+
+  &.bottom {
+    top: 60vh;
+  }
+
+
+}

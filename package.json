@@ -1,0 +1,31 @@
+{
+  "name": "steinringer.github.io",
+  "version": "1.0.0",
+  "description": "steinringer web on github",
+  "main": "index.html",
+  "scripts": {
+    "start": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steinringer/steinringer.github.io.git"
+  },
+  "keywords": [
+    "steinringer",
+    "web",
+    "and",
+    "it",
+    "solutions"
+  ],
+  "author": "Peter Mihalik",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/steinringer/steinringer.github.io/issues"
+  },
+  "homepage": "https://github.com/steinringer/steinringer.github.io#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2",
+    "lite-server": "^2.2.2"
+  }
+}
