@@ -25,7 +25,13 @@ var prev {
 }
 
 function flatOut(current, previous) {
-  return current * 0.2 + previous * 0.8;
+  if ((previous < 0 && current < previous) || previous > 0 && current > previous) {
+    return current;
+  }
+  else {
+    return current * 0.05 + previous * 0.95;
+  }
+
 }
 
 function handleAcceleration(ev) {
@@ -42,7 +48,7 @@ function handleAcceleration(ev) {
 
   var maxAcc = Math.max(Math.abs(prev.alpha), Math.max(Math.abs(prev.beta), Math.abs(prev.gamma)));
 
-  if (maxAcc > 30) {
+  if (maxAcc > 15) {
     var color = 'rgba(' + Math.max(255, maxAcc * 50) + ', 128, 128, 1)';
   }
   else {
