@@ -24,7 +24,7 @@ function handleAcceleration(ev) {
 
   var alpha = ev.rotationRate.alpha;
   var beta = ev.rotationRate.beta;
-  var gamma = v.rotationRate.gamma;
+  var gamma = ev.rotationRate.gamma;
 
   var maxAcc = Math.max(Math.abs(alpha), Math.max(Math.abs(beta), Math.abs(gamma)));
 
