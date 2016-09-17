@@ -18,7 +18,7 @@ function handleOrientation(ev) {
 
 // window.addEventListener("deviceorientation", handleOrientation, true);
 
-var prev {
+var prev = {
   alpha: 0,
   beta: 0,
   gamma: 0
