@@ -28,7 +28,7 @@ function handleAcceleration(ev) {
 
   var maxAcc = Math.max(Math.abs(alpha), Math.max(Math.abs(beta), Math.abs(gamma)));
 
-  if (maxAcc > 2) {
+  if (maxAcc > 30) {
     var color = 'rgba(' + Math.max(255, maxAcc * 50) + ', 128, 128, 1)';
   }
   else {
