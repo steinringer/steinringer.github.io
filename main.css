@@ -57,8 +57,18 @@ div {
   position: absolute;
   left: calc(50% - 15vh);
   width: 30vh;
-  height: 30vh; }
+  height: 30vh;
+  opacity: 0.33; }
   div.top {
     top: 10vh; }
   div.bottom {
     top: 60vh; }
+
+.r {
+  background-color: #000000; }
+
+.g {
+  background-color: #007000; }
+
+.b {
+  background-color: #0000b8; }
