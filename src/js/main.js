@@ -18,6 +18,16 @@ function handleOrientation(ev) {
 
 // window.addEventListener("deviceorientation", handleOrientation, true);
 
+var prev {
+  alpha: 0,
+  beta: 0,
+  gamma: 0
+}
+
+function flatOut(current, previous) {
+  return current * 0.2 + previous * 0.8;
+}
+
 function handleAcceleration(ev) {
   var elTop = document.querySelector('.top');
   var elBottom = document.querySelector('.bottom');
@@ -26,7 +36,11 @@ function handleAcceleration(ev) {
   var beta = ev.rotationRate.beta;
   var gamma = ev.rotationRate.gamma;
 
-  var maxAcc = Math.max(Math.abs(alpha), Math.max(Math.abs(beta), Math.abs(gamma)));
+  prev.alpha = flatOut(alpha, prev.alpha);
+  prev.beta = flatOut(beta, prev.beta);
+  prev.gamma = flatOut(gamma, prev.gamma);
+
+  var maxAcc = Math.max(Math.abs(prev.alpha), Math.max(Math.abs(prev.beta), Math.abs(prev.gamma)));
 
   if (maxAcc > 30) {
     var color = 'rgba(' + Math.max(255, maxAcc * 50) + ', 128, 128, 1)';
@@ -38,9 +52,9 @@ function handleAcceleration(ev) {
   elTop.style.backgroundColor = elBottom.style.backgroundColor = color;
 
 
-  elBottom.innerHTML = 'ra: ' + alpha + '<br />' +
-                       'rb: ' + beta + '<br />' +
-                       'rg: ' + gamma;
+  elBottom.innerHTML = 'ra: ' + prev.alpha + '<br />' +
+                       'rb: ' + prev.beta + '<br />' +
+                       'rg: ' + prev.gamma;
 
 
 }
