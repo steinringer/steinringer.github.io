@@ -52,6 +52,7 @@ body {
   background-color: #edf7f6; }
 
 div {
+  font-size: 4vh;
   background-color: #0070b8;
   position: absolute;
   left: calc(50% - 15vh);
