@@ -51,9 +51,9 @@ function handleAcceleration(ev) {
   prev.gamma = flatOut(gamma, prev.gamma);
 
   if (Math.abs(prev.alpha) > 50) {
-    elTopR.style.transform = 'translateY(' + (prev.alpha) + 'px)';
-    elTopG.style.transform = 'translateY(' + (prev.alpha/2) + 'px)';
-    elTopB.style.transform = 'translateY(' + (prev.alpha/3) + 'px)';
+    elTopR.style.transform = 'translateY(' + (prev.alpha) + 'px) translateX(' + (prev.beta) + ')';
+    elTopG.style.transform = 'translateY(' + (prev.alpha/2) + 'px) translateX(' + (prev.beta/2) + ')';
+    elTopB.style.transform = 'translateY(' + (prev.alpha/3) + 'px) translateX(' + (prev.beta/3) + ')';
   }
   else {
     elTopR.style.transform = null;
