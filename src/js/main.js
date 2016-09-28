@@ -50,27 +50,16 @@ function handleAcceleration(ev) {
   prev.beta = flatOut(beta, prev.beta);
   prev.gamma = flatOut(gamma, prev.gamma);
 
-  if (Math.abs(prev.alpha) > 50) {
-    elTopR.style.transform = 'translateY(' + (prev.alpha) + 'px) translateX(' + (prev.beta) + ')';
-    elTopG.style.transform = 'translateY(' + (prev.alpha/2) + 'px) translateX(' + (prev.beta/2) + ')';
-    elTopB.style.transform = 'translateY(' + (prev.alpha/3) + 'px) translateX(' + (prev.beta/3) + ')';
+  if (Math.abs(prev.alpha) > 50 || Math.abs(prev.gamma) > 50) {
+    elTopR.style.transform = Math.abs(prev.alpha) > 50 ? 'translateY(' + (prev.alpha) + 'px)' : '' + Math.abs(prev.gamma) > 50 ? ' translateX(' + (prev.gamma) + ')' : '';
+    elTopG.style.transform = Math.abs(prev.alpha) > 50 ? 'translateY(' + (prev.alpha/2) + 'px)' : '' + Math.abs(prev.gamma) > 50 ? ' translateX(' + (prev.gamma/2) + ')' : '';
+    elTopB.style.transform = Math.abs(prev.alpha) > 50 ? 'translateY(' + (prev.alpha/3) + 'px)' : '' + Math.abs(prev.gamma) > 50 ? ' translateX(' + (prev.gamma/3) + ')' : '';
   }
   else {
     elTopR.style.transform = null;
     elTopG.style.transform = null;
     elTopB.style.transform = null;
   }
-
-
-
-  elTop.style.backgroundColor = elBottom.style.backgroundColor = color;
-
-
-  elBottom.innerHTML = 'ra: ' + prev.alpha + '<br />' +
-                       'rb: ' + prev.beta + '<br />' +
-                       'rg: ' + prev.gamma;
-
-
 }
 
 window.addEventListener('devicemotion', handleAcceleration, true);
